@@ -1,0 +1,25 @@
+{
+    "name": "eHlw8032",
+    "keywords": "hlw8032,power,current,voltage,monitor,universal",
+    "description": "Hlw8032 library for universal hardware compatibility, supporting both software and hardware serial interfaces.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ahmedarif193/Hlw8032"
+    },
+    "version": "1.0",
+    "license": "LGPL-3.0",
+    "exclude": "tests",
+    "frameworks": "arduino",
+    "platforms": "*",
+    "dependencies": [
+    ],
+    "authors": {
+        "name": "Ahmed ARIF",
+        "email": "arif193@gmail.com",
+        "url": "https://github.com/ahmedarif193",
+        "maintainer": true
+    },
+    "examples": [
+        "examples/*/*.ino"
+    ]
+}

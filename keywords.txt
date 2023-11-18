@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map For Hlw8032
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Hlw8032	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setVF	KEYWORD2
+setCF	KEYWORD2
+onReceiveCallBack	KEYWORD2
+rxProcess	KEYWORD2
+Checksum	KEYWORD2
+processFrame	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+VolR1	LITERAL1
+VolR2	LITERAL1
+CurrentRF	LITERAL1

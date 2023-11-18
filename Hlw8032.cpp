@@ -23,6 +23,10 @@ void Hlw8032::onReceiveCallBack(PowerDataCallback callback) {
   _callback = callback;
 }
 
+// (header)	(Uk)	(Ut)	    (Ik)	    (It)	    (Pk)	    (Pt)	    (Adj)	(CFm)	(CFl)	(CS) =	(test)
+// (55 5A)	(02 C6 28)	(00 01 95)	(00 3C 3C)	(00 67 0E)	(4B 49 70)	(00 49 AC)	(71)	(BF)	(FB)	(BD) =	(230V 0.180A 40W)
+// (55 5A)	(02 C6 28)	(00 01 9E)	(00 3C 3C)	(00 02 A1)	(4B 49 70)	(00 01 ED)	(71)	(F9)	(7F)	(85) =	(230V 7A 1600W)
+
 void Hlw8032::rxProcess(uint8_t data) {
   static uint8_t buffer[24];
   static int index = 0;
