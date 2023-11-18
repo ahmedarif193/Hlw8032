@@ -1,5 +1,20 @@
 #include "Hlw8032.h"
 
+const float Rv2_Rv1_Tv = 511E-3;  // Voltage constant
+const float Ri = 20;              // Current constant
+
+// Calculated Vrms from your output
+float CalculatedVrms = 62.04;
+
+// Real Vrms from measurement
+float RealVrms = 234.4;
+
+// Calculate adjustment factor for voltage
+float AdjustmentFactorV = RealVrms / CalculatedVrms;
+
+// Adjusted voltage constant
+float AdjustedRv2_Rv1_Tv = Rv2_Rv1_Tv * AdjustmentFactorV;
+
 Hlw8032::Hlw8032() {
   VF = VolR1 / VolR2;
 }
