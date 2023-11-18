@@ -82,6 +82,6 @@ void Hlw8032::processFrame(uint8_t *frame) {
   double P = (double)Pk * AdjustedRv2_Rv1_Tv / (Pt * Ri);
 
   if (_callback) {
-    _callback(Vrms, Irms, P, CF);  // Pass the data to the callback
+    _callback(magic, Vrms, Irms, P, CF);  // Pass the data to the callback
   }
 }

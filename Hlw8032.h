@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-typedef void (*PowerDataCallback)(float Vrms, float Irms, float P, float CF);
+typedef void (*PowerDataCallback)(int magic, float Vrms, float Irms, float P, float CF);
 
 class Hlw8032 {
 public:
@@ -12,14 +12,15 @@ public:
   void setCF(float data){
     CurrentRF=data;
   }
+  void setMagic(int magic){
+    this->magic = magic;
+  }
   // Method to set the callback function
   void onReceiveCallBack(PowerDataCallback callback);
 
   // Method to process received data
   void rxProcess(uint8_t data);
-
-  // Other methods can be added here for additional functionality
-
+  
 private:
   bool Checksum(uint8_t *frame) {
     
@@ -36,4 +37,5 @@ private:
   float CurrentRF = 0.1;
   PowerDataCallback _callback;
   void processFrame(uint8_t *frame);
+  int magic = 0;
 };

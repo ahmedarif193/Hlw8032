@@ -13,9 +13,11 @@ SoftwareSerial serialPorts[] = {
 };
 Hlw8032 energyMeters[8];
 
-void powerDataCallBack(float Vrms, float Irms, float P, float CF) {
+void powerDataCallBack(int magic, float Vrms, float Irms, float P, float CF) {
   // Print each parameter to the serial monitor
-  Serial.print("Vrms: ");
+  Serial.print("from Index ");
+  Serial.print(magic);
+  Serial.print("; Vrms: ");
   Serial.print(Vrms);
   Serial.print(" V, Irms: ");
   Serial.print(Irms);
@@ -26,11 +28,9 @@ void powerDataCallBack(float Vrms, float Irms, float P, float CF) {
   Serial.println(".");
 }
 
-
 void setup() {
   Serial.begin(250000);
   Serial.println("[HLW8032] Ready! ...");
-
 
   #ifdef TIM4_BASE
 Serial.println(" this stm32 have : TIM4");
@@ -102,9 +102,9 @@ Serial.println(" this stm32 have : TIM1");
   for (int i = 0; i < 5; i++) {
     serialPorts[i].begin(4800, SERIAL_8E1);
     energyMeters[i].setVF(1.94); // Set the voltage factor for each meter
+    energyMeters[i].setMagic(i);
     energyMeters[i].onReceiveCallBack(powerDataCallBack);
   }
-
 }
 
 void loop() {
