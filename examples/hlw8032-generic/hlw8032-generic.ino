@@ -1,3 +1,16 @@
+/**
+ * @file hlw8032-generic.ino
+ * @brief Simple Test for HLW8032 Library
+ *
+ * Basic example demonstrating the use of the HLW8032 library for power measurement.
+ *
+ * @author Ahmed ARIF
+ * @email arif193@gmail.com
+ * @version 1.0
+ * @date Nov 18, 2023
+ * Copyright (c) 2023 Ahmed ARIF
+ * Licensed under LGPL-3.0, see <http://www.gnu.org/licenses/>.
+ */
 #include "Hlw8032.h"
 
 Hlw8032 energyMeter;

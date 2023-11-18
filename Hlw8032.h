@@ -1,3 +1,19 @@
+/**
+ * @file Hlw8032.h
+ * @brief HLW8032 Power Measurement Class
+ *
+ * Provides an interface for the HLW8032 power/current/voltage monitor IC. 
+ * Includes methods for setting calibration factors, processing data, and 
+ * handling power data callbacks.
+ * 
+ * @author Ahmed ARIF
+ * @email arif193@gmail.com
+ * @version 1.0
+ * @date Nov 18, 2023
+ * Copyright (c) 2023 Ahmed ARIF
+ * Licensed under LGPL-3.0, see <http://www.gnu.org/licenses/>.
+ */
+
 #include <Arduino.h>
 
 typedef void (*PowerDataCallback)(int magic, float Vrms, float Irms, float P, float CF);

@@ -1,3 +1,21 @@
+/**
+ * @file MultipleHLW8032Example.ino
+ * @brief Example Using Multiple HLW8032 Instances with SoftwareSerial
+ *
+ * Demonstrates interfacing multiple HLW8032 sensors using SoftwareSerial ports on an Arduino.
+ * This script initializes several HLW8032 instances, each connected to a different SoftwareSerial port,
+ * and reads power data from them, displaying the results on the serial monitor. 
+ * as part of the test, It also prints available timers on the current used STM32 chip,
+ * since my version of stm32 softwareserial lib use dynamic allocation of timers in each uart's instance.
+ * 
+ * @author Ahmed ARIF
+ * @email arif193@gmail.com
+ * @version 1.0
+ * @date Nov 18, 2023
+ * Copyright (c) 2023 Ahmed ARIF
+ * Licensed under LGPL-3.0, see <http://www.gnu.org/licenses/>.
+ */
+
 #include "SoftwareSerial.h"
 #include "Hlw8032.h"
 
